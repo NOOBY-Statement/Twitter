@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="icon.png">
+	<title>Home / Twitter</title>
+	<style>
+		a{
+			text-decoration: none;
+			color: white;
+		}
+		.container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+      .image {
+        flex-basis: 60px;
+      }
+      .text {
+        font-size: 15px;
+        padding-left: 10px;
+        font-family: Segoe UI;
+      }
+.container2 {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+      }
+      .image2 {
+        flex-basis: 50px;
+      }
+      .text2 {
+        font-size: 15px;
+        padding-left: 5px;
+        font-family: Segoe UI;
+      }
+      #input_container { 
+    position:relative;
+    padding:0;
+    margin:0;
+}
+#input { 
+    height:20px;
+    margin:0;
+    padding-left:50px;
+}
+#input_img {
+    position:absolute;
+    bottom:13px;
+    left:27px;
+    width:16px;
+    height:16px;
+}
+#cat{
+	margin: 0;
+	font-size: 13px;
+	color: #71767b;
+}
+#tweets{
+	margin-top: 0;
+	padding:0; font-size: 13px; 
+	color: #71767b;
+}
+#trend{
+	margin-top: 0;
+	padding: 0; 
+	margin-bottom: 0;
+	font-weight: bold;
+	}
+	
+.container3 {
+	display: flex;
+    align-items: center;
+    justify-content: left;
+        
+}
+.profile-container {
+	display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.profile-icon{
+	height: 140px;
+	width: 140px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 6px;
+	border-color: black;
+	overflow: hidden;
+	padding: -50px;
+	margin-top: -80px;
+	margin-left: 15px;
+	}
+.editprfl-btn {
+	height: 30px;
+	width: 50px;
+	align-items: right;
+}
+
+.display-info {
+	display: flex;
+    align-items: center;
+    justify-content: left;
+	margin-left: 14px;
+	font-size: 22px;	
+}
+
+.tweet {
+	display: flex;
+	border-bottom: 1px solid #2f3336;
+	margin-bottom: 0px;
+	padding: 10px 10px;
+	
+	
+}
+.tweet a {
+	color: #1b94e0;
+	text-decoration: none;
+}
+
+.tweet a hover {
+	text-decoration: underline;
+}
+
+ .tweet-author-logo {
+	width: 49px;
+	height: 49px;
+	border-radius: 50%;
+	margin-right: 9px;
+	padding: 5px;
+	margin-top: 0px;
+	margin-left: 1px;
+ }
+ .tweet-header {
+	display: flex;
+ }
+ 
+ .tweet-author-name {
+	font-size: 15px;
+	font-weight: 700;
+	margin-right: 5px;
+ }
+ 
+ .tweet-author-slug {
+	color: #5b7083;
+	font-size: 15px;
+ }
+ 
+ .tweet-publish-time {
+	margin-left: 5px;
+	color: #657786;
+ }
+ 
+ .tweet-image {
+	width: 75%;
+	height: 100%;
+	display: flex;
+	border-radius: 15px;
+	margin-top: 10px;
+	
+ 
+ }
+ .your-reaction {
+ 	margin-bottom: 4%;
+ 	margin-top: 1%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 10%;
+	opacity: 0.7;
+	height: 1px;
+	column-gap: 8px;
+	
+}
+
+.your-reaction div {
+	display: flex;
+	align-items: center;
+	curser: pointer;
+	
+}
+
+.your-reaction div p{
+	padding: 0 0 0 5px;
+	font-size: 12px;
+	
+}
+
+.your-reaction div i {
+	font-size: 20px;
+	padding: 5px 5px;
+	border-radius: 50%;
+	
+}
+</style>
+</head>
+<body bgcolor="black" style="overflow-x: hidden; width:100%; height: 100%;">
+	<aside style="width: 310px;
+        height: 3700px;
+        background:black;
+        color:white;
+        float: left;
+        border-right-style: solid;
+        border-color: #2f3336;
+        border-width: thin;
+        margin-top: 10px;
+    ">
+    	<a href="home.html"><img src="logo.png" width="30px" height="30px" style="margin-left: 45px;"></a>
+		   
+            <p style="margin-left: 50px; font-family: Segoe UI; font-size: 20px;"> 
+            	<a href="home.html"><img src="home2.png" height="23px" width="23px"><strong>&nbsp Home</strong></a><br><br>
+                <a href=""><img src="hashtag.png" height="23px" width="23px">&nbsp Explore</a><br><br>
+                <a href=""><img src="notification.png" height="25px" width="25px">&nbsp Notifications</a><br><br>
+                <a href=""><img src="email.png" height="23px" width="23px">&nbsp Messages</a><br><br>
+                <a href=""><img src="bookmark.png" height="23px" width="23px">&nbsp Bookmarks</a><br><br>
+                <a href=""><img src="logo.png" height="23px" width="23px">&nbsp Twitter Blue</a><br><br>
+                <a href=""><img src="verified.png" height="23px" width="23px">&nbsp Verified Organizations</a><br><br>
+                <a href="profile.html"><img src="user.png" height="23px" width="23px">&nbsp Profile</a><br><br>
+                <a href=""><img src="more.png" height="23px" width="23px">&nbsp More</a></p>
+                <button type="button" style="font-family: Segoe UI; font-size: 20px; align-content:center; width: 200px; height: 50px; border-radius: 30px; background-color: #1a8cd8; color: white; margin-left: 50px; border-color:#1a8cd8;"><strong>Tweet</strong></button></a>
+                <br><br>
+
+                <div class="container">
+      			<div class="image">
+       			<a href="add.html"><img src="dp.jpg" style="height:45px; width:45px; border-radius:50%; margin-left:45px;">
+      			</div>
+      			<div class="text">
+        		<p><strong>Halimaw Magmissyou</strong>&nbsp &nbsp<img src="more2.png" height="15px" width="15px"><br><span style="color: dimgray;">@halimawrinmagassume</span></p>
+      			</div>
+    			</div>
+    		</a>
+        </aside>
+
+        <aside style="width: 365px;
+        height: 3700px;
+        background:black;
+        color:white;
+        float: right;
+        border-left-style: solid;
+        border-color: #2f3336;
+        border-width: thin;
+        margin-top: 10px;">
+          
+        	<div id="input_container">
+    			<input type="search" placeholder="Search Twitter" id="input" value style="color: #71767b; background-color:#202327; width: 90%; height: 40px; border-radius: 20px; font-family: Segoe UI; font-size:15px; margin-left:17px;">
+    			<img src="search.png" id="input_img">
+			</div>
+			<div style="margin: auto;
+		margin-top: 20px;
+  		border-radius: 25px;
+  		background: #16181c;
+  		padding: 20px; 
+  		width: 78%;
+ 		height: 490px;
+ 		text-align: left;">
+		<h3 style="color:white; font-family: Segoe UI; font-size: 21px;text-align: left; margin-left: 3px; margin-top: 3px;">Trends for you</h3>
+		<div style="font-family: Segoe UI;">
+		<p id="cat">Hip hop • Trending</p>
+		<p id="trend">GISELLE</p>
+		<p id="tweets">110k Tweets</p>
+
+		<p id="cat">Trending in Philippines</p>
+		<p id="trend">Sir Hayag</p>
+		<p id="tweets">69k Tweets</p>
+
+		<p id="cat">Trending in Philippines</p>
+		<p id="trend">April Shower</p>
+		<p id="tweets">45k Tweets</p>
+
+		<p id="cat">Music • Trending</p>
+		<p id="trend">SHIELD</p>
+		<p id="tweets">8,976 Tweets</p>
+
+		<p id="cat">Trending in Philippines</p>
+		<p id="trend">Di ko na keribells</p>
+		<p id="tweets">42k Tweets</p>
+
+		<p id="cat">Trending in Philippines</p>
+		<p id="trend">EWAN KO</p>
+		<p id="tweets">8,700 Tweets</p>
+
+		<a href="" style="color:#1a89d4; text-decoration: none;">Show more</a>
+	</div>
+</div>
+<div style="margin: auto;
+		margin-top: 20px;
+  		border-radius: 25px;
+  		background: #16181c;
+  		padding: 20px; 
+  		width: 78%;
+ 		height: 275px;
+ 		text-align: left;">
+ 		<h3 style="color:white; font-family: Segoe UI; font-size: 21px;text-align: left; margin-left: 3px; margin-top: 3px; margin-bottom: 8px;">Who to follow</h3>
+    	<table>
+    		<tr>
+    			<td>
+    			<div style="font-family: Segoe UI;">
+		<div class="container2">
+      			<div class="image2">
+       			<img src="cnu.jpg" style="height:45px; width:45px; border-radius:50%;">
+      			</div>
+      			<div class="text2">
+        		<p><strong>cnu rel8</strong><br><span style="color: dimgray;">@cnurel8jn</span></p>
+      			</div>
+    			</div>
+    		</td>
+    		<td>
+    			<button type="button" style="color: #16181c; margin-left: 30px; font-size: 14px; align-content: center; width: 85px; height: 35px; border-radius: 20px;"><strong>Follow</strong></button></a>
+    		</td>
+    		</tr>
+
+    		<tr>
+    			<td>
+    			<div class="container2">
+      			<div class="image2">
+       			<img src="sir.jpg" style="height:45px; width:45px; border-radius:50%;">
+      			</div>
+      			<div class="text2">
+        		<p><strong>Sir Hayag</strong><br><span style="color: dimgray;">@mikebaelhayag</span></p>
+      			</div>
+    			</div>
+    		</td>
+    		<td>
+    			<button type="button" style="color: #16181c; margin-left: 30px; font-size: 14px; align-content: center; width: 85px; height: 35px; border-radius: 20px;"><strong>Follow</strong></button></a>
+    		</td>
+    		</tr>
+
+    		<tr>
+    			<td>
+    			<div style="font-family: Segoe UI;">
+		<div class="container2">
+      			<div class="container2">
+      			<div class="image2">
+       			<img src="okay.jpg" style="height:45px; width:45px; border-radius:50%;">
+      			</div>
+      			<div class="text2">
+        		<p><strong>hshshshs</strong><br><span style="color: dimgray;">@okay</span></p>
+        		</div>
+    			</div>
+    		</td>
+    		<td>
+    			<button type="button" style="color: #16181c; margin-left: 30px; font-size: 14px; align-content: center; width: 85px; height: 35px; border-radius: 20px;"><strong>Follow</strong></button></a>
+    		</td>
+    		</tr>
+    	</table>
+
+		<a href="" style="color:#1a89d4; text-decoration: none; font-family: Segoe UI;">Show more</a>
+	</div>
+	<br>
+	<p style="color: #71767b; font-family: Segoe UI; font-size:12px; margin-left:35px;">Terms of Service &nbsp&nbsp Privacy Policy &nbsp&nbsp Cookie Policy<br>Accessibility &nbsp&nbsp  Ads Info &nbsp&nbsp  More ••• &nbsp&nbsp  ©2023 X Corp.</p>
+	<br>
+	
+</div>
+        </aside>
+<nav>
+	<div style="height: 60px;
+		color: white;
+		padding: 20px 25px;
+		border-bottom-style: solid;
+		border-width: thin;
+		border-color: #2f3336;
+		background: black;">
+
+	<div class="profile-container">
+		<div class="display-name">
+		 <div style="font-family: Segoe UI;">
+	
+		
+		<p style="font-size: 22px; margin-top: -13px; margin-left: 25px; margin-right: -150px;"><strong><a href="home.html"> Home </strong></a>
+		 </div>
+		 </div>
+		</div>
+	</div>
+	<nav style="font-family: Segoe UI; font-size:17px; text-align:center; margin-top:-40px;">
+				<a href="" style="padding-right: 120px; padding-left: 25px;"><strong>For you</strong></a>
+				<a href="" style="padding-right: 25px; padding-left: 120px; color: dimgray;">Following</a>
+			</nav>
+			<br>
+</nav>
+<article>
+<div style="
+		color: white;
+		padding: 20px 25px;
+		border-bottom-style: solid;
+		border-width: thin;
+		border-color: #2f3336;
+		margin: auto;
+		background: black;">
+
+ <div style="padding: 20px 25px;
+		border-bottom-style: solid;
+		border-width: thin;
+		border-color: #2f3336;
+		margin: auto;
+		background: black;">
+ 	<table style="margin-top:-35px;">
+ 		<tr>
+ 			<td><a href="profile.html"><img class="tweet-author-logo" src="dp.jpg" style="margin-left: 10px;"></img></td>
+ 				<td><input type="text" placeholder="What's happening?" style="font-family: Segoe UI; font-size:20px; color:white; border: none; outline: none; background-color:black;"></td>
+ 		</tr>
+ 	</table>
+ 		<div class="your-reaction">
+ 			<div class="pic"><img src="image.png" style="height: 18px; width: 18px; margin-left:620px;"></img>
+ 				<div class="gif"><img src="gif.png" style="height: 18px; width: 18px; margin-left:25px;"></div>
+ 				<div class="poll"><img src="poll.png" style="height: 18px; width: 18px; margin-left:25px;"></div>
+ 				<div class="emoji"><img src="emoji.png" style="height: 18px; width: 18px; margin-left:25px;"></div>
+ 				<div class="sched"><img src="sched.png" style="height: 18px; width: 18px; margin-left:25px;"></div>
+ 				<div class="loc"><img src="loc2.png" style="height: 18px; width: 18px; margin-left:25px;"></div>
+ 				<div><button type="button" style="margin-left:230px; font-family: Segoe UI; font-size: 17px; align-content:center; width: 85px; height: 40px; border-radius: 30px; background-color: #1a8cd8; color: white; border-color:#1a8cd8;"><strong>Tweet</strong></button></div>
+ 			</div>
+ 		</div>
+
+ </div>
+
+	<!-- post1 start -->
+		 <div class="layout-main">
+	 <div style="font-family: Segoe UI;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 21m
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				pagod na koh beh :P
+				
+			</div>
+			<div class="your-reaction">
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+				
+			</div>
+		 </div>
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	</div>
+	<!-- post1 end -->
+
+	<!-- post2 start -->
+		<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 1h
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				me when i listen to taylor swift
+				<div>
+				<img class="tweet-image" src="spongebob.jpeg" style="float: left; width: 27.5%; border-radius: 15px; padding-right: 2px;"></img>
+				</div>
+				<div>
+				<img class="tweet-image" src="volume.jpeg" style="width: 27.5%; border-radius: 15px;"> </img>
+				</div>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>
+	 </div>
+	 <!-- post2 end -->
+
+	 <!-- post3 start -->
+	 <div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 2h
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				HAHAHAHAHHAAHHAHHAHAHAHAHAHHHA
+				<img class="tweet-image" src="dog.jpeg" style="width:37.5%;"> </img>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	</div>
+<!-- post 3 end -->
+	<!-- post4 start -->
+	 
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 2h
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				sir mataas na grade lang e haha edi wag??#$'???!!
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	</div>
+	</div>
+	<!-- post4 end -->
+<!-- post starts -->
+	
+	
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 5h
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				<img class="tweet-image" src="CAT MEME FACE.jpeg" style="width:27.5%;"> </img>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	</div>
+	<!-- </div> -->
+	
+	<!-- post ends -->
+	
+	<!-- post starts -->
+	
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 10h
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				what eef wag nalang kmi pumasok,,
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	</div>
+	<!-- </div>	 -->
+	
+	<!-- post ends -->
+	
+	<!-- post starts -->
+		
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 2d
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				<img class="tweet-image" src="pinya.jpeg" style="width:27.5%"> </img>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div></div>
+
+	
+	<!-- post ends -->
+	
+	<!-- post starts -->
+	
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 25 Apr
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				haha emmy langz
+				<img class="tweet-image" src="joy.jpeg" style="width:27.5%;"> </img>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div></div>	
+	
+	<!-- post ends -->
+	
+	<!-- post starts -->
+	
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 22 Apr
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				ginanon ba naman
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>
+		</div>
+	
+	<!-- post ends -->
+	
+	<!-- post starts -->
+	
+	<div style="font-family: Segoe UI; color: white;">
+		<div class="tweet">
+		 <a href="profile.html" style="text-decoration: none; color:white;"><img class="tweet-author-logo" src="dp.jpg"></img>
+		 <div class="tweet-main">
+			<div class="tweet-header">
+			 <div class="tweet-author-name">
+				Halimaw Magmissyou 
+			 </div>
+			 <div class="tweet-author-slug">
+				<span style="color: #657786;">@halimawrinmagassume</span></a>
+			 </div>
+			 <div class="tweet-publish-time">
+				• 17 Apr
+			 </div>
+			</div>
+			<div class="tweet-content"> 
+				tama
+				<img class="tweet-image" src="kung ako yan.jpeg" style="width:27.5%"> </img>
+			</div>
+			<div class="your-reaction">
+				
+				<div class="comment"><img src ="comment.png" style="height: 18px; width: 17px; margin-left: 450px;"> </img><p style="">2</p>
+					<div class="retweet"><img src ="retweet1.png" style="height: 18px; width: 17px; margin-left:100px;"> </img><p style="">5</p></div>
+					<div class="like"><img src ="like2.png" style="height: 18px; width: 18px; margin-left: 100px;"></img><p style="">12</p></div>
+					<div class="impression"><img src ="bar.png" style="height: 18px; width: 15px; margin-left: 100px;"> </img><p style="">16</p></div>
+				<div class="share"><img src ="share.png" style="height: 18px; width: 18px; margin-left:100px;"> </img><div>
+					
+			</div>
+		 </div>		 
+		</div>
+	 </div>
+	 </div>	
+	</div>	
+	
+	<!-- post ends -->
+
+	
+</div>
+</article>
+
+
+</body>
+</html>
